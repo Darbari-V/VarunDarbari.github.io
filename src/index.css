@@ -1,7 +1,5 @@
 #root {
-  width: 1126px;           /* fixed-width column */
-  margin: 0 auto;          /* centers that column */
-  text-align: center;      /* centers all text */
-  border-inline: 1px solid var(--border);  /* the side lines */
-  display: flex; flex-direction: column; ...
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
 }
