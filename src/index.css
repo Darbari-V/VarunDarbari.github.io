@@ -1,3 +1,16 @@
+:root {
+  color-scheme: dark;
+  --bg: #000000;
+  --text: #c9ced6;
+  --text-h: #ffffff;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
 #root {
   min-height: 100svh;
   display: flex;

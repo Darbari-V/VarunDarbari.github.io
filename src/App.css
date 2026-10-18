@@ -1,4 +1,49 @@
+
+
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+}
+
 .site-header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 24px;
+  padding: 40px;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+}
+
+.nav-links {
+  display:flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: greenyellow;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.social-sidebar {
+  position: fixed;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 1.5rem;
+}
+
+.social-sidebar a {
+  color: var(--text);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.social-sidebar a:hover {
+  color: #4ade80;
+  transform: scale(1.2);
 }
