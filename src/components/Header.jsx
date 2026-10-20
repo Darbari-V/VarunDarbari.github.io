@@ -8,7 +8,7 @@ return (
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-        <a href="#Contact">Contact</a>
+        <a href="#contact">Contact</a>
         <a href="/Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
     </nav>
 </header>)
