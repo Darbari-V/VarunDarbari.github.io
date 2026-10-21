@@ -4,8 +4,7 @@
   font-family: 'Tangerine';
   font-size: 2rem;
   font-weight: 400;
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+  color: var(--text-h);
 }
 
 .site-header {
@@ -25,7 +24,7 @@
 }
 
 .nav-links a {
-  color: greenyellow;
+  color: var(--text-h);
   text-decoration: none;
   font-size: 1.1rem;
 }
@@ -42,12 +41,12 @@
 }
 
 .social-sidebar a {
-  color: var(--text);
+  color: var(--accent);
   transition: color 0.2s, transform 0.2s;
 }
 
 .social-sidebar a:hover {
-  color: #4ade80;
+  color: var(--accent);
   transform: scale(1.2);
 }
 
@@ -59,16 +58,16 @@
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
 }
 
 .card {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 20px;
+  padding: 10px;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -89,3 +88,22 @@
 }
 
 .card-text h4, .card-text p { margin: 0; }
+
+.section-intro {
+  margin: 8px 0 0;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  color: var(--text);
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  transform: scale(1.2);
+}
