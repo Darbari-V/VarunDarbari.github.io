@@ -3,6 +3,8 @@ import Hero from './components/Hero'
 import SocialSidebar from './components/SocialSidebar'
 import Contact from './components/Contact'
 import Section from './components/Section'
+import About from './components/About'  
+
 import './App.css'
 
 function App() {
@@ -11,10 +13,8 @@ function App() {
       <Header />
       <SocialSidebar />
       <Hero/>
-        <Section id="about" title="About" intro="A short line about you.">
-          <p>Write two or three sentences here.</p>
-        </Section>
-
+        <About />
+        
         <Section id="experience" title="Experience">
           <p>Coming soon.</p>
         </Section>
