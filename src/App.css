@@ -269,3 +269,89 @@
   font-size: 1.25rem;
   color: var(--text-h);
 }
+
+.exp-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+}
+
+.exp-tabs {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid var(--border);
+}
+
+.exp-tab {
+  background: none;
+  border: none;
+  border-left: 2px solid transparent;
+  margin-left: -2px;
+  padding: 12px 18px;
+  text-align: left;
+  font: inherit;
+  color: var(--text);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+
+.exp-tab:hover {
+  color: var(--accent);
+  background: var(--card-bg);
+}
+
+.exp-tab.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  font-weight: 600;
+}
+
+.exp-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-bottom: 16px;
+}
+
+.exp-panel-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--text-h);
+}
+
+.exp-dates {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.exp-panel li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .exp-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .exp-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    border-left: none;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .exp-tab {
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    margin: 0 0 -2px;
+  }
+
+  .exp-tab.active {
+    border-bottom-color: var(--accent);
+  }
+}

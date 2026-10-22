@@ -10,7 +10,7 @@ const education = [
   {
     degree: 'B.Tech in Mechanical Engineering',
     school: 'Dr. A.P.J. Abdul Kalam Technical University, India',
-    dates: 'Aug 2011- April 2015'
+    dates: 'Aug 2012- April 2016'
   },
 ]
 
@@ -22,7 +22,7 @@ const achievements = [
 
 function About() {
   return (
-    <Section id="about" title="About">
+    <Section id="about" title="About Me">
       <p className="about-summary">
         IT Business Analyst with three years of consulting experience, backed by
         Product Specialist and Customer Success roles. I work across requirements
