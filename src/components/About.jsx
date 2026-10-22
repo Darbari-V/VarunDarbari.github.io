@@ -17,6 +17,8 @@ const education = [
 const achievements = [
   'Beta Gamma Sigma (BΓΣ). Recognized as #1 graduating student. Lifetime Member (2022)',
   'Graduated Summa Cum Laude. Graduated top of the class.  GPA: 4.0/4.0',
+  'Elected Secretary & Public Relations Officer | AIS, USF. Elected student leader',
+  'Co-led the "Grow with Google" workshop'
 ]
 
 

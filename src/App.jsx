@@ -4,7 +4,8 @@ import SocialSidebar from './components/SocialSidebar'
 import Contact from './components/Contact'
 import Section from './components/Section'
 import About from './components/About'
-import Experience from './components/Experience'  
+import Experience from './components/Experience' 
+import Skills from './components/Skills' 
 
 import './App.css'
 
@@ -21,9 +22,7 @@ function App() {
           <p>Coming soon.</p>
         </Section>
 
-        <Section id="skills" title="Skills">
-          <p>Coming soon.</p>
-        </Section>  
+        <Skills /> 
       <Contact/>
     </div>
     )
