@@ -11,7 +11,7 @@ import './App.css'
 
 function App() {
   return (
-    <div>
+    <div id="top">
       <Header />
       <SocialSidebar />
       <Hero/>
