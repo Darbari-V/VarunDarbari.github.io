@@ -10,7 +10,7 @@ const education = [
   {
     degree: 'B.Tech in Mechanical Engineering',
     school: 'Dr. A.P.J. Abdul Kalam Technical University, India',
-    dates: 'Aug 2012- April 2016'
+    dates: 'Aug 2012- Aug 2016'
   },
 ]
 

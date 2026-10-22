@@ -82,7 +82,7 @@
 }
 
 .card-icon {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: #4ade80;
   flex-shrink: 0;
 }
@@ -293,6 +293,8 @@
   color: var(--text);
   cursor: pointer;
   transition: color 0.2s, background 0.2s;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .exp-tab:hover {
@@ -329,31 +331,6 @@
 .exp-panel li {
   margin-bottom: 10px;
   line-height: 1.6;
-}
-
-@media (max-width: 700px) {
-  .exp-layout {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .exp-tabs {
-    flex-direction: row;
-    overflow-x: auto;
-    border-left: none;
-    border-bottom: 2px solid var(--border);
-  }
-
-  .exp-tab {
-    white-space: nowrap;
-    border-left: none;
-    border-bottom: 2px solid transparent;
-    margin: 0 0 -2px;
-  }
-
-  .exp-tab.active {
-    border-bottom-color: var(--accent);
-  }
 }
 
 .skills-grid {
@@ -397,3 +374,127 @@
   font-size: 0.9rem;
   color: var(--text);
 }
+
+.proj-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.proj-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  padding: 12px 20px;
+  font: inherit;
+  color: var(--text);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+
+.proj-tab:hover {
+  color: var(--accent);
+}
+
+.proj-tab.active {
+  color: var(--accent);
+  background: var(--card-bg);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+.exp-panel p {
+  margin: 0 0 16px;
+  line-height: 1.6;
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .exp-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .exp-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    border-left: none;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .exp-tab {
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    margin: 0 0 -2px;
+  }
+
+  .exp-tab.active {
+    border-bottom-color: var(--accent);
+  }
+
+  .proj-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .proj-tab {
+    white-space: nowrap;
+  }
+}
+
+/* Project section layout: keep long project names inside the sidebar. */
+.proj-layout {
+  align-items: start;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: 32px;
+}
+
+.proj-layout > * {
+  min-width: 0;
+}
+
+.proj-layout .exp-tabs {
+  min-width: 0;
+}
+
+.proj-layout .exp-tab {
+  width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+}
+
+.proj-layout .exp-panel {
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .proj-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .proj-layout .exp-tabs {
+    flex-direction: column;
+    overflow: visible;
+    border-left: 3px solid var(--border);
+    border-bottom: none;
+  }
+
+  .proj-layout .exp-tab {
+    white-space: normal;
+    border-left: 3px solid transparent;
+    border-bottom: none;
+    margin: 0;
+    text-align: left;
+  }
+
+  .proj-layout .exp-tab.active {
+    border-left-color: var(--accent);
+    border-bottom-color: transparent;
+  }
+}  
