@@ -1,4 +1,5 @@
 import ContactCard from './ContactCard'
+import Section from './Section'
 
 import { FaEnvelope, FaMapMarkerAlt, FaPhone, FaGithub, FaLinkedin } from 'react-icons/fa'
 
@@ -12,13 +13,11 @@ const contacts = [
 
 function Contact(){
     return(
-        <section id="contact" className="contact">
-            <h2>Get in touch</h2>
-            <p className="section-intro">Let's Connect</p>
+        <Section id="contact" title="Get in touch" intro="Let's Connect">
             <div className="card-grid">
                 {contacts.map((c) => (<ContactCard key={c.label} {...c} />))}
             </div>
-        </section>
+        </Section>
     )
 }
 

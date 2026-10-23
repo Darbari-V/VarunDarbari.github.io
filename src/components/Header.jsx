@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const navItems = [
   { label: 'About', href: '#about' },
@@ -10,6 +11,8 @@ const navItems = [
 
 function Header(){
     const [activeSection, setActiveSection] = useState('');
+    const [menuOpen, setMenuOpen] = useState(false);
+    const closeMenu = () => setMenuOpen(false);
 
   useEffect(() => {
     const sections = navItems
@@ -45,11 +48,24 @@ function Header(){
         Varun Darbari <span>| Business Analyst</span>
       </a>
 
-      <nav className="nav-links" aria-label="Main navigation">
+      <button
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
+        aria-expanded={menuOpen}
+        aria-controls="primary-nav"
+      >
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </button>
+
+      <nav id="primary-nav" 
+           className={menuOpen ? 'nav-links open' : 'nav-links'} 
+           aria-label="Main navigation">
         {navItems.map(({ label, href }) => (
           <a
             key={href}
             href={href}
+            onClick={closeMenu}
             className={activeSection === href ? 'active' : ''}
             aria-current={activeSection === href ? 'location' : undefined}
           >

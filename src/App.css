@@ -52,12 +52,6 @@
   transform: scale(1.2);
 }
 
-.contact {
-  padding: 80px 24px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -80,12 +74,12 @@
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: #4ade80;
+  border-color: var(--accent);
 }
 
 .card-icon {
   font-size: 1.1rem;
-  color: #4ade80;
+  color: var(--accent);
   flex-shrink: 0;
 }
 
@@ -111,10 +105,18 @@
 }
 
 .section {
-  padding: 80px 24px;
+  padding: clamp(40px, 6vw, 72px) 24px 0;
   max-width: 1000px;
   margin: 0 auto;
   scroll-margin-top: 100px;
+}
+
+.section-title {
+  margin: 0 0 12px;
+}
+
+.section:last-of-type {
+  padding-bottom: 64px;
 }
 
 .hero {
@@ -592,10 +594,6 @@ html {
   box-shadow: 0 0 16px color-mix(in srgb, var(--accent) 10%, transparent);
 }
 
-.section {
-  scroll-margin-top: 104px;
-}
-
 .section-reveal {
   opacity: 1;
 }
@@ -613,29 +611,6 @@ html {
   }
 }
 
-@media (max-width: 800px) {
-  .site-header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-    padding: 16px 20px 12px;
-  }
-
-  .nav-links {
-    width: 100%;
-    max-width: 100%;
-    justify-content: flex-start;
-    gap: 4px;
-    flex-wrap: wrap;
-    border-radius: 22px;
-  }
-
-  .nav-links a {
-    padding: 7px 10px;
-    min-height: 36px;
-    font-size: 0.9rem;
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -647,5 +622,72 @@ html {
   .section-reveal {
     transition: none !important;
     transform: none !important;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 6px;
+  color: var(--text-h);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .site-header {
+    padding: 12px 20px;
+  }
+
+  .brand {
+    font-size: 1.6rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 12px;
+    right: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 8px;
+    border-radius: 18px;
+    background: var(--bg);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    justify-content: flex-start;
+    padding: 12px 14px;
+    font-size: 1rem;
+  }
+
+  .social-sidebar {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+    padding: 12px 16px;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    z-index: 900;
+  }
+
+  body {
+    padding-bottom: 64px;
   }
 }
