@@ -7,6 +7,14 @@
   --border: #e3e8ee;
   --accent: #15803d;
   --achievement-border: #15803d;
+  --header-h: 122px;
+  --section-pad: clamp(40px, 6vw, 72px);
+}
+
+@media (max-width: 800px) {
+  :root {
+    --header-h: 62px;
+  }
 }
 
 [data-theme="dark"] {

@@ -86,7 +86,7 @@
 .card-text h4, .card-text p { margin: 0; }
 
 .section-intro {
-  margin: 8px 0 0;
+  margin: 2px 0 0;
 }
 
 .theme-toggle {
@@ -105,7 +105,7 @@
 }
 
 .section {
-  padding: clamp(40px, 6vw, 72px) 24px 0;
+  padding: var(--section-pad) 24px 0;
   max-width: 1000px;
   margin: 0 auto;
   scroll-margin-top: 100px;
@@ -116,6 +116,7 @@
 }
 
 .section:last-of-type {
+  min-height: calc(100vh - var(--header-h));
   padding-bottom: 64px;
 }
 
@@ -337,31 +338,6 @@
   line-height: 1.6;
 }
 
-@media (max-width: 700px) {
-  .exp-layout {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .exp-tabs {
-    flex-direction: row;
-    overflow-x: auto;
-    border-left: none;
-    border-bottom: 2px solid var(--border);
-  }
-
-  .exp-tab {
-    white-space: nowrap;
-    border-left: none;
-    border-bottom: 2px solid transparent;
-    margin: 0 0 -2px;
-  }
-
-  .exp-tab.active {
-    border-bottom-color: var(--accent);
-  }
-}
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -435,17 +411,6 @@
   font-weight: 600;
 }
 
-@media (min-width: 701px) {
-  .proj-tabs {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-  }
-
-  .proj-tab {
-    white-space: nowrap;
-  }
-}
-
 .exp-panel p {
   margin: 0 0 16px;
   line-height: 1.6;
@@ -478,37 +443,10 @@
   min-width: 0;
 }
 
-@media (max-width: 700px) {
-  .proj-layout {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-  }
-
-  .proj-layout .exp-tabs {
-    flex-direction: column;
-    overflow: visible;
-    border-left: 2px solid var(--border);
-    border-bottom: none;
-  }
-
-  .proj-layout .exp-tab {
-    white-space: normal;
-    border-left: 2px solid transparent;
-    border-bottom: none;
-    margin: 0;
-    text-align: left;
-  }
-
-  .proj-layout .exp-tab.active {
-    border-left-color: var(--accent);
-    border-bottom-color: transparent;
-  }
-}
-
 /* Modern portfolio navigation and scroll interactions */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 104px;
+  scroll-padding-top: calc(var(--header-h) - var(--section-pad));
 }
 
 .site-header {
@@ -598,33 +536,6 @@ html {
   opacity: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .section-reveal {
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 600ms ease, transform 600ms ease;
-  }
-
-  .section-reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .nav-links a,
-  .nav-links a::after,
-  .section-reveal {
-    transition: none !important;
-    transform: none !important;
-  }
-}
-
 .menu-toggle {
   display: none;
   background: none;
@@ -635,7 +546,10 @@ html {
   cursor: pointer;
 }
 
+/* Tablet and phone */
+/* Tablet and phone */
 @media (max-width: 800px) {
+  /* Header and hamburger menu */
   .site-header {
     padding: 12px 20px;
   }
@@ -672,6 +586,7 @@ html {
     font-size: 1rem;
   }
 
+  /* Social icons become a bottom bar */
   .social-sidebar {
     top: auto;
     left: 0;
@@ -689,5 +604,100 @@ html {
 
   body {
     padding-bottom: 64px;
+  }
+
+  /* Experience: stacked, tabs scroll sideways */
+  .exp-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .exp-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    border-left: none;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .exp-tab {
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    margin: 0 0 -2px;
+  }
+
+  .exp-tab.active {
+    border-bottom-color: var(--accent);
+  }
+
+  /* Projects: area tabs scroll sideways, project list stays vertical */
+  .proj-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .proj-tab {
+    white-space: nowrap;
+  }
+
+  .proj-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .proj-layout .exp-tabs {
+    flex-direction: column;
+    overflow: visible;
+    border-left: 2px solid var(--border);
+    border-bottom: none;
+  }
+
+  .proj-layout .exp-tab {
+    white-space: normal;
+    border-left: 2px solid transparent;
+    border-bottom: none;
+    margin: 0;
+    text-align: left;
+  }
+
+  .proj-layout .exp-tab.active {
+    border-left-color: var(--accent);
+    border-bottom-color: transparent;
+  }
+}
+
+/* Desktop */
+@media (min-width: 801px) {
+  .section,
+  .hero {
+    padding-left: 88px;
+    padding-right: 88px;
+  }
+}
+
+/* Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .nav-links a,
+  .nav-links a::after,
+  .section-reveal {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 600ms ease, transform 600ms ease;
+  }
+
+  .section-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
