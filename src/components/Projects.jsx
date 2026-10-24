@@ -16,7 +16,8 @@ const featured = [
       { name: 'Build and test', state: 'planned' },
     ],
     tools: ['PESTLE', 'SWOT', 'Stakeholder Wheel', 'Power/Interest Grid', 'RACI Chart', 'CARDI Log'],
-    link: 'https://github.com/Darbari-V/crm-migration-case-study',
+    link: 'https://darbari-v.github.io/crm-migration-case-study/',
+    source: 'https://github.com/Darbari-V/crm-migration-case-study',
   },
 ]
 
@@ -113,9 +114,14 @@ function Projects(){
                             ))}
                         </ul>
 
-                        <a className="btn btn-secondary featured-link" href={f.link} target="_blank" rel="noreferrer">
-                            View the case study on GitHub <span aria-hidden="true">↗</span>
-                        </a>
+                        <div className="hero-actions featured-link">
+                            <a className="btn btn-primary" href={f.link} target="_blank" rel="noreferrer">
+                                Read the case study <span aria-hidden="true">↗</span>
+                            </a>
+                            <a className="btn btn-secondary" href={f.source} target="_blank" rel="noreferrer">
+                                Source on GitHub <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
                     </article>
                 ))}
             </div>
