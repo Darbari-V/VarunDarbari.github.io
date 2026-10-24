@@ -1,6 +1,25 @@
 import Section from './Section'
 import {useState} from 'react'
 
+// Featured case studies: current work, shown first.
+// To move to the next stage, change 'current' to 'done' and 'planned' to 'current'.
+const featured = [
+  {
+    title: 'CRM Migration to Salesforce',
+    subtitle: 'MavenTech case study · started October 2026',
+    status: 'In progress',
+    summary:
+      'MavenTech, a fictional company that sells computer hardware to large businesses, is moving its sales pipeline data (a public-domain Maven Analytics dataset) to Salesforce. As the business analyst, I take it from project brief to user acceptance testing, adding each piece as I finish it. Built while I study for the BCS Foundation Certificate in Business Analysis.',
+    stages: [
+      { name: 'Discovery', state: 'current' },
+      { name: 'Specification', state: 'planned' },
+      { name: 'Build and test', state: 'planned' },
+    ],
+    tools: ['PESTLE', 'SWOT', 'Stakeholder Wheel', 'Power/Interest Grid', 'RACI Chart', 'CARDI Log'],
+    link: 'https://github.com/Darbari-V/crm-migration-case-study',
+  },
+]
+
 const areas = [
   {
     name: 'Business Analysis & Customer Success',
@@ -62,8 +81,48 @@ function Projects(){
     const project = area.projects[activeProject]
 
     return(
-        <Section id="projects" title="Projects" intro="Academia–industry partnership projects.">
-            <br/>
+        <Section id="projects" title="Projects">
+            <h3 className="proj-subhead">Featured case studies</h3>
+            <p className="proj-subintro">Self-directed business analysis case studies I'm building now. Each one grows as I finish a new piece.</p>
+
+            <div className="featured-grid">
+                {featured.map((f) => (
+                    <article className="featured-card" key={f.title}>
+                        <p className="featured-status">{f.status}</p>
+                        <div>
+                            <h4>{f.title}</h4>
+                            <p className="featured-subtitle">{f.subtitle}</p>
+                        </div>
+                        <p>{f.summary}</p>
+
+                        <p className="featured-label">Stages</p>
+                        <ol className="stage-list">
+                            {f.stages.map((s) => (
+                                <li key={s.name} aria-current={s.state === 'current' ? 'step' : undefined}>
+                                    <span className={`stage stage-${s.state}`}>
+                                        {s.state === 'done' && '✓ '}{s.name}
+                                    </span>
+                                </li>
+                            ))}
+                        </ol>
+
+                        <p className="featured-label">Techniques used so far</p>
+                        <ul className="tag-list">
+                            {f.tools.map((t) => (
+                                <li className="tag" key={t}>{t}</li>
+                            ))}
+                        </ul>
+
+                        <a className="btn btn-secondary featured-link" href={f.link} target="_blank" rel="noreferrer">
+                            View the case study on GitHub <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+                ))}
+            </div>
+
+            <h3 className="proj-subhead">Earlier projects</h3>
+            <p className="proj-subintro">Academia–industry partnership projects.</p>
+
             <div className="proj-tabs" role="tablist" aria-label="Project areas">
                 {areas.map((a,i)=> (
                     <button key={a.name} role="tab" aria-selected={i === activeArea}
