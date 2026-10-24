@@ -15,7 +15,11 @@ function SocialSidebar(){
     const [theme, setTheme] = useState(getInitialTheme());
 
     useEffect(() => {
-        localStorage.setItem('theme', theme);
+        try {
+            localStorage.setItem('theme', theme);
+        } catch {
+            // Storage is blocked: keep the theme, just don't remember it
+        }
         document.documentElement.setAttribute('data-theme', theme);
     }, [theme]);
 
