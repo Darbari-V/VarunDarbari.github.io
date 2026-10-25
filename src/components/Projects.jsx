@@ -19,6 +19,27 @@ const featured = [
     link: 'https://darbari-v.github.io/crm-migration-case-study/',
     source: 'https://github.com/Darbari-V/crm-migration-case-study',
   },
+  {
+    title: 'Customer 360 — CRM Transformation & Customer Data Integration',
+    subtitle: 'Northstar Services · Independent BA case study · started October 2026',
+    status: 'In progress',
+    summary:
+      'An independent fictional Business Analysis case study exploring fragmented customer information, inconsistent lead follow-ups and sales reporting challenges. Current work covers problem definition, stakeholder investigation planning, preliminary As-Is/To-Be process analysis and gap analysis. Requirements, customer-data analysis, CRM configuration and testing will follow as the project progresses.',
+    stages: [
+      { name: 'Discovery & process analysis', state: 'current' },
+      { name: 'Requirements', state: 'planned' },
+      { name: 'Build & validation', state: 'planned' },
+    ],
+    tools: [
+      'Business Problem Analysis',
+      'Stakeholder Analysis',
+      'Investigation Planning',
+      'As-Is / To-Be Mapping',
+      'Gap Analysis',
+    ],
+    link: 'https://darbari-v.github.io/northstar-customer-360/',
+    source: 'https://github.com/Darbari-V/northstar-customer-360',
+  },
 ]
 
 const areas = [
