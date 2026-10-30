@@ -15,7 +15,7 @@ const featured = [
       { name: 'Specification', state: 'planned' },
       { name: 'Build and test', state: 'planned' },
     ],
-    tools: ['PESTLE', 'SWOT', 'Stakeholder Wheel', 'Power/Interest Grid', 'RACI Chart', 'CARDI Log'],
+    tools: ['PESTLE', 'SWOT', 'Stakeholder Wheel', 'Power/Interest Grid', 'RACI Chart', 'CARDI Log', 'Swimlane Diagram', 'As-Is Process Analysis'],
     link: 'https://darbari-v.github.io/crm-migration-case-study/',
     source: 'https://github.com/Darbari-V/crm-migration-case-study',
   },
