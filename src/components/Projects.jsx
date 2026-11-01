@@ -24,11 +24,12 @@ const featured = [
     subtitle: 'Northstar Services · Independent BA case study · started October 2026',
     status: 'In progress',
     summary:
-      'An independent fictional Business Analysis case study exploring fragmented customer information, inconsistent lead follow-ups and sales reporting challenges. Current work covers problem definition, stakeholder investigation planning, preliminary As-Is/To-Be process analysis and gap analysis. Requirements, customer-data analysis, CRM configuration and testing will follow as the project progresses.',
+      'An independent fictional IT Business Analysis case study examining fragmented customer information, inconsistent lead follow-ups and reporting challenges. Published artefacts cover business problem analysis, stakeholder investigation planning, preliminary As-Is/To-Be process analysis, gap analysis and a scoped requirements catalogue with business rules, user stories, proposed acceptance criteria and traceability. Customer-data analysis, CRM configuration and validation are planned for subsequent phases.',
     stages: [
-      { name: 'Discovery & process analysis', state: 'current' },
-      { name: 'Requirements', state: 'planned' },
-      { name: 'Build & validation', state: 'planned' },
+      { name: 'Discovery & process foundation', state: 'done' },
+      { name: 'Requirements engineering', state: 'done' },
+      { name: 'Customer data & SQL', state: 'planned' },
+      { name: 'CRM build & validation', state: 'planned' },
     ],
     tools: [
       'Business Problem Analysis',
@@ -36,6 +37,10 @@ const featured = [
       'Investigation Planning',
       'As-Is / To-Be Mapping',
       'Gap Analysis',
+      'Requirements Engineering',
+      'Business Rules',
+      'User Stories & Acceptance Criteria',
+      'Traceability & Change Impact Analysis',
     ],
     link: 'https://darbari-v.github.io/northstar-customer-360/',
     source: 'https://github.com/Darbari-V/northstar-customer-360',
